@@ -96,7 +96,8 @@ import UIKit
      from                   -> Your current ViewController (self)
      */
     public func shouldPresent( _ contentViewController: UIViewController?, from superVC: UIViewController?, fullscreen: Bool = false) {
-        if detailVC.children.count > 0{
+        detailVC.modalPresentationStyle = .fullScreen
+	if detailVC.children.count > 0{
             let viewControllers:[UIViewController] = detailVC.children
             for viewContoller in viewControllers{
                 viewContoller.willMove(toParent: nil)
